@@ -32,9 +32,7 @@ jobs:
     # Build project
     - name: build
       shell: bash
-      run: |     
-       mkdir build    
-       make build
+      run: make build
 
     # run tests
     - name: test
