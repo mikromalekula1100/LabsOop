@@ -32,7 +32,11 @@ jobs:
     # Build project
     - name: build
       shell: bash
-      run: make build
+      run: |
+          mkdir -p build
+	        cd ./build
+          cmake ..
+          make all
 
     # run tests
     - name: test
