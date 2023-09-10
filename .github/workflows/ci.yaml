@@ -19,7 +19,7 @@ jobs:
         googletest_tag: 'release-1.11.0'
 
     - name: .pre 
-      working-directory: ${{runner.workspace}}/uast
+      working-directory: ${{runner.workspace}}
       shell: bash
       run: |         
           pip install wheel
@@ -27,10 +27,10 @@ jobs:
 
     # Build project
     - name: build
-      working-directory: ${{runner.workspace}}/build/
       shell: bash
+      working-directory: ${{runner.workspace}}
       run: |
-          cd build
+          mkdir build && cd ./build
           cmake ..
           make all
 
