@@ -1,7 +1,7 @@
 .PHONY: build run test
 
 build: clean-build
-	mkdir -p build
+	mkdir build
 	cd ./build; cmake ..; make all
 
 run:
@@ -11,4 +11,4 @@ test:
 	./build/*_test
 
 clean-build:
-	rm -rf ./build/*
+	rm -rf ./build/
