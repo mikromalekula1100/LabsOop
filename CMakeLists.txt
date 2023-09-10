@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 project(lab0)
 
 set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_compile_options(-g -rdynamic)
 
@@ -19,14 +20,14 @@ file(GLOB_RECURSE SOURCES LIST_DIRECTORIES false ${SOURCE_DIR}/*.cpp)
 
 file(GLOB_RECURSE TEST_SOURCES LIST_DIRECTORIES false ${TEST_DIR}/*.cpp)
 
-add_library(my_lib ${SOURCES})
+add_library(${CMAKE_PROJECT_NAME}_lib ${SOURCES})
 
-add_executable(my_exe main.cpp)
+add_executable(${CMAKE_PROJECT_NAME}_exe main.cpp)
 
-target_link_libraries(my_exe PRIVATE my_lib)
+target_link_libraries(${CMAKE_PROJECT_NAME}_exe PRIVATE ${CMAKE_PROJECT_NAME}_lib)
 
-add_executable(my_test ${TEST_SOURCES})
+add_executable(${CMAKE_PROJECT_NAME}_test ${TEST_SOURCES})
 
-target_include_directories(my_test PRIVATE ${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
+target_include_directories(${CMAKE_PROJECT_NAME}_test PRIVATE ${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
-target_link_libraries(my_test PRIVATE my_lib gtest gtest_main)
+target_link_libraries(${CMAKE_PROJECT_NAME}_test PRIVATE ${CMAKE_PROJECT_NAME}_lib gtest gtest_main)
