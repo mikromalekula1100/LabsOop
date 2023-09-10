@@ -30,9 +30,7 @@ jobs:
       shell: bash
       working-directory: ${{runner.workspace}}
       run: |
-          mkdir build && cd ./build
-          cmake ..
-          make all
+          make build
 
     - name: Check code style
       working-directory: ${{runner.workspace}}/uast
@@ -43,4 +41,4 @@ jobs:
     - name: test
       working-directory: ${{runner.workspace}}/build/test/
       shell: bash
-      run: lab0_tst 
+      run: make test 
