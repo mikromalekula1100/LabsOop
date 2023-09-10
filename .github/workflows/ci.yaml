@@ -9,9 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    - name: Checkout Repository
-      uses: actions/checkout@v2
-
     # Install dependencies
     - name: Install googletest
       uses: cvpkg/googletest-action@v0.1
@@ -25,17 +22,19 @@ jobs:
           pip install wheel
           pip install cpplint   
 
-    # Build project
-    - name: build
-      shell: bash
-      working-directory: ${{runner.workspace}}
-      run: |
-          make build
+    - name: Checkout Repository
+      uses: actions/checkout@v2
 
     - name: Check code style
       working-directory: ${{runner.workspace}}/uast
       shell: bash
-      run: python -m cpplint --recursive --exclude=source/catch.hpp --filter=-legal/copyright,-build/include_subdir source/* 
+      run: python -m cpplint --recursive src/* 
+
+    # Build project
+    - name: build
+      shell: bash
+      working-directory: ${{runner.workspace}}
+      run: make build
 
     # run tests
     - name: test
