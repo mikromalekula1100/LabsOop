@@ -26,18 +26,15 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Check code style
-      working-directory: ${{runner.workspace}}
       shell: bash
       run: python -m cpplint --recursive src/* 
 
     # Build project
     - name: build
       shell: bash
-      working-directory: ${{runner.workspace}}
       run: make build
 
     # run tests
     - name: test
-      working-directory: ${{runner.workspace}}/build/test/
       shell: bash
       run: make test 
