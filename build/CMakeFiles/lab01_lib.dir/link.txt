@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblab01_lib.a CMakeFiles/lab01_lib.dir/src/lab0/line_editor.cpp.o
+/usr/bin/ranlib liblab01_lib.a

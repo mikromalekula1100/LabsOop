@@ -1,10 +1,10 @@
 #include <iostream>
 
-#include "lib.h"
+#include "/home/maks/Desktop/LabsOop/include/line_editor.h"
 
 using namespace std;
 
 int main() {
-    cout << "Bruh: " << endl
-         << A() << endl;
+    string text = "aaaaaaaaaaaaaaaaaa";
+    cout<<replace(text, 1, 'a', 'o')<<endl;
 }
