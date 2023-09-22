@@ -57,10 +57,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/maks/Desktop/LabsOop
+CMAKE_SOURCE_DIR = /home/maks/Desktop/121/LabsOop
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/maks/Desktop/LabsOop/build
+CMAKE_BINARY_DIR = /home/maks/Desktop/121/LabsOop/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,14 +132,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/maks/Desktop/LabsOop/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/maks/Desktop/LabsOop/build/CMakeFiles /home/maks/Desktop/LabsOop/build/lib/googletest//CMakeFiles/progress.marks
-	cd /home/maks/Desktop/LabsOop/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/googletest/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/maks/Desktop/LabsOop/build/CMakeFiles 0
+	cd /home/maks/Desktop/121/LabsOop/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/maks/Desktop/121/LabsOop/build/CMakeFiles /home/maks/Desktop/121/LabsOop/build/lib/googletest//CMakeFiles/progress.marks
+	cd /home/maks/Desktop/121/LabsOop/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/googletest/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/maks/Desktop/121/LabsOop/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/maks/Desktop/LabsOop/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/googletest/clean
+	cd /home/maks/Desktop/121/LabsOop/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/googletest/clean
 .PHONY : clean
 
 # The main clean target
@@ -148,17 +148,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/maks/Desktop/LabsOop/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/googletest/preinstall
+	cd /home/maks/Desktop/121/LabsOop/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/googletest/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/maks/Desktop/LabsOop/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/googletest/preinstall
+	cd /home/maks/Desktop/121/LabsOop/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/googletest/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/maks/Desktop/LabsOop/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/maks/Desktop/121/LabsOop/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Help Target
@@ -184,6 +184,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/maks/Desktop/LabsOop/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/maks/Desktop/121/LabsOop/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

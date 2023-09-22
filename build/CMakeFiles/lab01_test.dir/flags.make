@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/maks/Desktop/LabsOop/include -isystem /home/maks/Desktop/LabsOop/lib/googletest/googletest/include -isystem /home/maks/Desktop/LabsOop/lib/googletest/googletest
+CXX_INCLUDES = -I/home/maks/Desktop/121/LabsOop/include -isystem /home/maks/Desktop/121/LabsOop/lib/googletest/googletest/include -isystem /home/maks/Desktop/121/LabsOop/lib/googletest/googletest
 
 CXX_FLAGS = -std=gnu++20
 

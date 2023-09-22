@@ -1,5 +1,5 @@
 CMakeFiles/lab01_lib.dir/src/lab0/line_editor.cpp.o: \
- /home/maks/Desktop/LabsOop/src/lab0/line_editor.cpp \
+ /home/maks/Desktop/121/LabsOop/src/lab0/line_editor.cpp \
  /usr/include/stdc-predef.h \
  /home/maks/Desktop/LabsOop/include/line_editor.h \
  /usr/include/c++/11/iostream \

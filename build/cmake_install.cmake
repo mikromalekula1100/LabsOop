@@ -1,4 +1,4 @@
-# Install script for directory: /home/maks/Desktop/LabsOop
+# Install script for directory: /home/maks/Desktop/121/LabsOop
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,7 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/maks/Desktop/LabsOop/build/lib/googletest/cmake_install.cmake")
+  include("/home/maks/Desktop/121/LabsOop/build/lib/googletest/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -55,5 +55,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/maks/Desktop/LabsOop/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/maks/Desktop/121/LabsOop/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
