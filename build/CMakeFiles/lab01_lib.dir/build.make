@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/maks/Desktop/121/LabsOop
+CMAKE_SOURCE_DIR = /home/maks/Desktop/LabsOop
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/maks/Desktop/121/LabsOop/build
+CMAKE_BINARY_DIR = /home/maks/Desktop/LabsOop/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/lab01_lib.dir/depend.make
@@ -70,18 +70,18 @@ include CMakeFiles/lab01_lib.dir/progress.make
 include CMakeFiles/lab01_lib.dir/flags.make
 
 CMakeFiles/lab01_lib.dir/src/lab0/line_editor.cpp.o: CMakeFiles/lab01_lib.dir/flags.make
-CMakeFiles/lab01_lib.dir/src/lab0/line_editor.cpp.o: /home/maks/Desktop/121/LabsOop/src/lab0/line_editor.cpp
+CMakeFiles/lab01_lib.dir/src/lab0/line_editor.cpp.o: /home/maks/Desktop/LabsOop/src/lab0/line_editor.cpp
 CMakeFiles/lab01_lib.dir/src/lab0/line_editor.cpp.o: CMakeFiles/lab01_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/maks/Desktop/121/LabsOop/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/lab01_lib.dir/src/lab0/line_editor.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lab01_lib.dir/src/lab0/line_editor.cpp.o -MF CMakeFiles/lab01_lib.dir/src/lab0/line_editor.cpp.o.d -o CMakeFiles/lab01_lib.dir/src/lab0/line_editor.cpp.o -c /home/maks/Desktop/121/LabsOop/src/lab0/line_editor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/maks/Desktop/LabsOop/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/lab01_lib.dir/src/lab0/line_editor.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lab01_lib.dir/src/lab0/line_editor.cpp.o -MF CMakeFiles/lab01_lib.dir/src/lab0/line_editor.cpp.o.d -o CMakeFiles/lab01_lib.dir/src/lab0/line_editor.cpp.o -c /home/maks/Desktop/LabsOop/src/lab0/line_editor.cpp
 
 CMakeFiles/lab01_lib.dir/src/lab0/line_editor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/lab01_lib.dir/src/lab0/line_editor.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/maks/Desktop/121/LabsOop/src/lab0/line_editor.cpp > CMakeFiles/lab01_lib.dir/src/lab0/line_editor.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/maks/Desktop/LabsOop/src/lab0/line_editor.cpp > CMakeFiles/lab01_lib.dir/src/lab0/line_editor.cpp.i
 
 CMakeFiles/lab01_lib.dir/src/lab0/line_editor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/lab01_lib.dir/src/lab0/line_editor.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maks/Desktop/121/LabsOop/src/lab0/line_editor.cpp -o CMakeFiles/lab01_lib.dir/src/lab0/line_editor.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maks/Desktop/LabsOop/src/lab0/line_editor.cpp -o CMakeFiles/lab01_lib.dir/src/lab0/line_editor.cpp.s
 
 # Object files for target lab01_lib
 lab01_lib_OBJECTS = \
@@ -93,7 +93,7 @@ lab01_lib_EXTERNAL_OBJECTS =
 liblab01_lib.a: CMakeFiles/lab01_lib.dir/src/lab0/line_editor.cpp.o
 liblab01_lib.a: CMakeFiles/lab01_lib.dir/build.make
 liblab01_lib.a: CMakeFiles/lab01_lib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/maks/Desktop/121/LabsOop/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library liblab01_lib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/maks/Desktop/LabsOop/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library liblab01_lib.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/lab01_lib.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lab01_lib.dir/link.txt --verbose=$(VERBOSE)
 
@@ -106,6 +106,6 @@ CMakeFiles/lab01_lib.dir/clean:
 .PHONY : CMakeFiles/lab01_lib.dir/clean
 
 CMakeFiles/lab01_lib.dir/depend:
-	cd /home/maks/Desktop/121/LabsOop/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/maks/Desktop/121/LabsOop /home/maks/Desktop/121/LabsOop /home/maks/Desktop/121/LabsOop/build /home/maks/Desktop/121/LabsOop/build /home/maks/Desktop/121/LabsOop/build/CMakeFiles/lab01_lib.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/maks/Desktop/LabsOop/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/maks/Desktop/LabsOop /home/maks/Desktop/LabsOop /home/maks/Desktop/LabsOop/build /home/maks/Desktop/LabsOop/build /home/maks/Desktop/LabsOop/build/CMakeFiles/lab01_lib.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/lab01_lib.dir/depend
 

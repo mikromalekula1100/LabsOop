@@ -1,4 +1,4 @@
-# Install script for directory: /home/maks/Desktop/121/LabsOop/lib/googletest
+# Install script for directory: /home/maks/Desktop/LabsOop/lib/googletest
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,7 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/maks/Desktop/121/LabsOop/build/lib/googletest/googlemock/cmake_install.cmake")
+  include("/home/maks/Desktop/LabsOop/build/lib/googletest/googlemock/cmake_install.cmake")
 
 endif()
 
