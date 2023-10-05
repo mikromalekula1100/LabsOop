@@ -1,10 +1,16 @@
 #include <iostream>
+#include "MyArray.h"
+#include "BitString.h"
+#include <vector>
 
-#include "lib.h"
 
-using namespace std;
 
-int main() {
-    cout << "Bruh: " << endl
-         << A() << endl;
+
+int main(){
+
+    BitString a("11000011111");
+    BitString b("10111");
+    b = a;
+    b.print();
 }
+
