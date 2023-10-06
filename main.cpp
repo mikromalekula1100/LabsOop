@@ -1,16 +1,17 @@
 #include <iostream>
-#include "MyArray.h"
-#include "BitString.h"
 #include <vector>
 
-
+#include "MyArray.h"
+#include "BitString.h"
+#include "MaxAndMinForMyArray.h"
 
 
 int main(){
+   
 
-    BitString a("11000011111");
-    BitString b("10111");
-    b = a;
-    b.print();
+
+    BitString string1("111");
+    BitString string2("111");
+    std::cout<<(string1 > string2)<<std::endl;
 }
 

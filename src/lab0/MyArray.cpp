@@ -1,11 +1,11 @@
 #include "MyArray.h"
 
 MyArray::MyArray() : _sizeArray{0}, _arrayPtr{nullptr}, _arrayCapacity{0}{
-    std::cout << "Default constructor" << std::endl;
+    // std::cout << "Default constructor" << std::endl;
 }
 
 MyArray::MyArray(const size_t& n, unsigned char t) : _sizeArray{n}, _arrayCapacity{n*2} {
-    std::cout << "Fill constructor" << std::endl;
+    // std::cout << "Fill constructor" << std::endl;
     _arrayPtr = new unsigned char [n*2];
     for(int i = 0; i < n; ++i)
         _arrayPtr[i] = t;
@@ -13,7 +13,7 @@ MyArray::MyArray(const size_t& n, unsigned char t) : _sizeArray{n}, _arrayCapaci
 }
 
 MyArray::MyArray(const std::initializer_list<unsigned char>& t) {
-    std::cout << "Initializer list constructor" << std::endl;
+    // std::cout << "Initializer list constructor" << std::endl;
     _arrayPtr = new unsigned char [t.size()*2];
     size_t i{0};
     for(auto& j : t)
@@ -24,7 +24,7 @@ MyArray::MyArray(const std::initializer_list<unsigned char>& t) {
 }
 
 MyArray::MyArray(const std::string& t) {
-    std::cout << "Copy string constructor" << std::endl;
+    // std::cout << "Copy string constructor" << std::endl;
     _sizeArray = t.size();
     _arrayCapacity = t.size() * 2;
     _arrayPtr = new unsigned char[_sizeArray*2];
@@ -33,7 +33,7 @@ MyArray::MyArray(const std::string& t) {
 
 }
 
-unsigned char& MyArray::operator[](const int i) const {
+const unsigned char& MyArray::operator[](const int i) const {
     if(i < 0 or i > (_sizeArray-1)) throw std::logic_error("out of range");
     return *(_arrayPtr + i);
 }
@@ -69,7 +69,7 @@ void MyArray::push_back(const unsigned char t) {
 }
 
 MyArray::~MyArray() noexcept {
-    std::cout << "destructor"<<std::endl;
+    // std::cout << "destructor"<<std::endl;
     if(_sizeArray > 0){
         delete[](_arrayPtr);
         _arrayPtr = nullptr;
@@ -77,12 +77,18 @@ MyArray::~MyArray() noexcept {
     }
 }
 
-size_t MyArray::getSize() { return _sizeArray; }
+size_t MyArray::getSize() const { return _sizeArray; }
 
-unsigned char* MyArray::getPtr() { return _arrayPtr; }
+unsigned char* MyArray::getPtr() const { return _arrayPtr; }
+
+void MyArray::printArray() {
+    for(int i = 0; i < this->_sizeArray; ++i)
+        std::cout<<this->_arrayPtr[i];
+    std::cout<<std::endl;
+}
 
 MyArray::MyArray(const MyArray& other) : _sizeArray(other._sizeArray), _arrayCapacity(other._sizeArray * 2){
-    std::cout << "Copy constructor" << std::endl;
+    // std::cout << "Copy constructor" << std::endl;
 
     _arrayPtr = new unsigned char[_sizeArray];
 
@@ -92,7 +98,7 @@ MyArray::MyArray(const MyArray& other) : _sizeArray(other._sizeArray), _arrayCap
 }
 
 MyArray::MyArray(MyArray&& other) noexcept : _sizeArray(other._sizeArray), _arrayPtr(other._arrayPtr), _arrayCapacity(other._arrayCapacity){
-    std::cout << "Move constructor" << std::endl;
+    // std::cout << "Move constructor" << std::endl;
     other._arrayPtr = nullptr;
     other._sizeArray = 0;
     other._arrayCapacity = 0;
@@ -101,7 +107,7 @@ MyArray::MyArray(MyArray&& other) noexcept : _sizeArray(other._sizeArray), _arra
 
 //перемещающий оператор присваивания
 MyArray& MyArray::operator=(MyArray&& other) { 
-    std::cout << "move =" << std::endl;
+    // std::cout << "move =" << std::endl;
     
     MyArray newArray(std::move(other));
 
@@ -115,7 +121,7 @@ MyArray& MyArray::operator=(MyArray&& other) {
 
 //копирующий оператор присваивания 
 MyArray& MyArray::operator=(const MyArray& other) {
-    std::cout << "copy =" << std::endl;
+    // std::cout << "copy =" << std::endl;
 
     if (this == &other)
         return *this;
@@ -131,3 +137,10 @@ MyArray& MyArray::operator=(const MyArray& other) {
 }
 
 
+// MyArray& MyArray::max(MyArray& other) {
+//    return (other._sizeArray >= this->_sizeArray) ? other : *this;
+// }
+
+// MyArray& MyArray::min(MyArray& other) {
+//    return (other._sizeArray <= this->_sizeArray) ? other : *this;
+// }
