@@ -4,7 +4,7 @@
 #include <iostream>
 #include <exception>
 
-const unsigned char INITIAL_VALUE_0 = 48;
+const unsigned char INITIAL_VALUE_0 = '0';
 const unsigned char INITIAL_VALUE_1 = 49;
 
 class MyArray{
@@ -25,11 +25,12 @@ public:
 
     MyArray& operator=(MyArray&& other);
     MyArray& operator=(const MyArray & other);
-
+    
+    bool operator==(const MyArray & other) const;
     size_t getSize() const;
     unsigned char* getPtr() const;
 
-    void printArray();
+    void printArray() const;
     // MyArray& max(MyArray& other);
     // MyArray& min(MyArray& other);
 

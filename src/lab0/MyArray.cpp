@@ -7,6 +7,7 @@ MyArray::MyArray() : _sizeArray{0}, _arrayPtr{nullptr}, _arrayCapacity{0}{
 MyArray::MyArray(const size_t& n, unsigned char t) : _sizeArray{n}, _arrayCapacity{n*2} {
     // std::cout << "Fill constructor" << std::endl;
     _arrayPtr = new unsigned char [n*2];
+
     for(int i = 0; i < n; ++i)
         _arrayPtr[i] = t;
     
@@ -16,8 +17,10 @@ MyArray::MyArray(const std::initializer_list<unsigned char>& t) {
     // std::cout << "Initializer list constructor" << std::endl;
     _arrayPtr = new unsigned char [t.size()*2];
     size_t i{0};
+
     for(auto& j : t)
         _arrayPtr[i++] = j;
+
     _sizeArray = t.size();
     _arrayCapacity = t.size()*2;
 
@@ -28,18 +31,21 @@ MyArray::MyArray(const std::string& t) {
     _sizeArray = t.size();
     _arrayCapacity = t.size() * 2;
     _arrayPtr = new unsigned char[_sizeArray*2];
+
     for(int i = 0; i < _sizeArray; ++i)
         _arrayPtr[i] = t[i];
 
 }
 
 const unsigned char& MyArray::operator[](const int i) const {
-    if(i < 0 or i > (_sizeArray-1)) throw std::logic_error("out of range");
+    if(i < 0 or i > (_sizeArray-1)){
+        throw std::logic_error("out of range");
+    } 
     return *(_arrayPtr + i);
 }
 
 unsigned char& MyArray::operator[](const int i)  {
-    if(i < 0 or i > (_sizeArray-1)) throw std::logic_error("out of range");
+    if(i < 0 or i > (_sizeArray-1)) throw std::logic_error("out of range for const object");
     return *(_arrayPtr + i);
 }
 
@@ -49,6 +55,9 @@ void MyArray::push_back(const unsigned char t) {
         _arrayPtr = new unsigned char[1];
         _arrayCapacity = 1;
     }
+
+    // if (_sizeArray == _arrayCapacity) resize(2*_arrayCapacity);
+
     else{
         if(_sizeArray == _arrayCapacity){
             unsigned char* New = _arrayPtr;
@@ -77,11 +86,23 @@ MyArray::~MyArray() noexcept {
     }
 }
 
+bool MyArray::operator==(const MyArray& other) const{ 
+    if(this->_sizeArray != other._sizeArray) return false;
+
+    for(int i = 0; i < other._sizeArray; ++i){
+        if(this->_arrayPtr[i] != other[i]){
+            return false;
+        }
+    }
+            
+    return true;
+}
+
 size_t MyArray::getSize() const { return _sizeArray; }
 
 unsigned char* MyArray::getPtr() const { return _arrayPtr; }
 
-void MyArray::printArray() {
+void MyArray::printArray() const{
     for(int i = 0; i < this->_sizeArray; ++i)
         std::cout<<this->_arrayPtr[i];
     std::cout<<std::endl;
@@ -130,6 +151,7 @@ MyArray& MyArray::operator=(const MyArray& other) {
     _sizeArray = other._sizeArray;
     _arrayCapacity = other._arrayCapacity;
     this->_arrayPtr = new unsigned char[_arrayCapacity];
+
     for (int i = 0; i < _sizeArray; ++i)
              _arrayPtr[i] = other[i];
 

@@ -7,16 +7,16 @@ BitString::BitString() {
 
 BitString::BitString(const std::string& s) {
     size_t sizeOfStr = s.size();
-    
     for(int i = 0; i < sizeOfStr; ++i){
-        if(!(s[i] == '0' || s[i] == '1')) throw std::logic_error("not a binary string");
+        if(!(s[i] == '0' || s[i] == '1')) 
+            throw std::logic_error("not a binary string");
         bitString.push_back(s[i]);
     }
 }
 
 
 
-void BitString::print() {
+void BitString::print() const{
     this->bitString.printArray();
  }
 
@@ -47,7 +47,7 @@ BitString& BitString::operator or(const BitString& other) {
         // 49 - 1; 48 - 0
         unsigned char buf = (this->bitString[sizeThis-i] + newString[sizeNewString-i]);
         if(buf > (INITIAL_VALUE_0 * 2)){
-            (this->bitString)[i] = INITIAL_VALUE_1;
+            bitString[i] = INITIAL_VALUE_1;
         }
             
         else{
@@ -107,6 +107,8 @@ bool BitString::operator<(const BitString& other) {
 
     int sizeThis = this->bitString.getSize();
 
+    if(sizeThis == 0 || other.bitString.getSize()==0) throw std::logic_error("comparison of an empty string");
+    
     MyArray newString = min(this->bitString, other.bitString);
     this->bitString = max(this->bitString, other.bitString);
 
@@ -140,6 +142,8 @@ bool BitString::operator>(const BitString& other) {
 
     int sizeThis = this->bitString.getSize();
     int sizeOther = other.bitString.getSize();
+    
+    if(sizeThis == 0 || other.bitString.getSize()==0) throw std::logic_error("comparison of an empty string");
 
     MyArray newString = min(this->bitString, other.bitString);
     this->bitString = max(this->bitString, other.bitString);
@@ -151,10 +155,11 @@ bool BitString::operator>(const BitString& other) {
         if(this->bitString[i] < newString[i]) return 0;
         if(this->bitString[i] == newString[i]){
             numberOfEquals++;
-            
         }
     }
-    if(numberOfEquals == sizeThis and  sizeThis == sizeOther) return 0;
-    
+    if((numberOfEquals == sizeOther) or (sizeThis > sizeOther)){
+        return 0;
+    } 
+
     return 1;
 }

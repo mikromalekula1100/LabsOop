@@ -21,7 +21,7 @@ public:
     bool operator ==(const BitString & other);
     bool operator >(const BitString & other);
 
-    void print();
+    void print() const;
 private:    
     MyArray bitString;
   

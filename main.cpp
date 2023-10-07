@@ -8,10 +8,9 @@
 
 int main(){
    
+    BitString a1 ("1");
+    BitString a2("1");
+    std::cout<<(a1 == a2)<<std::endl;
 
-
-    BitString string1("111");
-    BitString string2("111");
-    std::cout<<(string1 > string2)<<std::endl;
 }
 
