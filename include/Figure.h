@@ -8,7 +8,9 @@ using namespace std;
 
 class Figure{
 public:
-    virtual ~Figure(){}
+    virtual ~Figure();
     virtual pair<double, double> calculatGeomCenter() = 0;
     virtual operator double() = 0;
+    virtual ostream& print(ostream&) const = 0;
 };
+ostream& operator<<(ostream& out, const Figure& obj);
