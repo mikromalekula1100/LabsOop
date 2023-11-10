@@ -5,16 +5,33 @@
 class Hexagon : public Figure{
 
 private:
-    const int _numberVertices = 6;
     vector<pair<double, double>> _points;
 
 public:
-    int getNumberVertices() const;
-    const vector<pair<double, double>>& getPoints() const;
+    static const int _numberVertices = 6;
+    
     Hexagon();
+    
     Hexagon(const initializer_list<pair<double, double>>& lst);
+
+    Hexagon(const Hexagon&);
+
+    Hexagon(Hexagon&&);
+
+    Hexagon& operator=(const Hexagon&);
+
+    Hexagon& operator=( Hexagon&&);
+
+    bool operator==(const Hexagon&);
+
+    const vector<pair<double, double>>& getPoints() const;
+
     pair<double, double> calculatGeomCenter () override;
-    operator double() override;
+
+    explicit operator double() override;
+
     ostream& print(ostream&) const override;
+    
+    istream& reading(istream&) override;
 };
 

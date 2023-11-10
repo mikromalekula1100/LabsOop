@@ -5,16 +5,35 @@
 class Pentagon : public Figure{
 
 private:
-    const int _numberVertices = 5;
     vector<pair<double, double>> _points;
 
 public:
-    int getNumberVertices() const;
-    const vector<pair<double, double>>& getPoints() const;
+    static const int _numberVertices = 5;
+
     Pentagon();
+
     Pentagon(const initializer_list<pair<double, double>>& lst);
+
+    Pentagon(const Pentagon& other);
+
+    Pentagon(Pentagon&&);
+
+    Pentagon& operator=(const Pentagon&);
+
+    Pentagon& operator=(Pentagon&&);
+
+    bool operator==(const Pentagon&);
+
+    const vector<pair<double, double>>& getPoints() const;
+
     pair<double, double> calculatGeomCenter () override;
-    operator double() override;
+
+    explicit operator double() override;
+
     ostream& print(ostream&) const override;
+
+    istream& reading(istream&) override;
+    
+    
 };
 
