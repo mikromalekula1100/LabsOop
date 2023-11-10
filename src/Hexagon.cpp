@@ -38,10 +38,10 @@ bool Hexagon::operator==(const Hexagon& other) {
 
       if (_points[i].first != other.getPoints()[i].first ||
           _points[i].second != other.getPoints()[i].second) {
-         return 0;
+         return false;
       }
    }
-   return 1;
+   return true;
 }
 
 const vector<pair<double, double>>& Hexagon::getPoints() const { return _points;}
@@ -49,11 +49,12 @@ const vector<pair<double, double>>& Hexagon::getPoints() const { return _points;
 pair<double, double> Hexagon:: calculatGeomCenter (){
 
     pair<double, double> geomCenter = {0, 0};
+
     for(int i = 0; i < _numberVertices; ++i){
         
-            geomCenter.second += _points[i].second;
+        geomCenter.second += _points[i].second;
     
-            geomCenter.first += _points[i].first;
+        geomCenter.first += _points[i].first;
     }
 
     geomCenter.first /= _numberVertices;
