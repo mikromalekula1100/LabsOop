@@ -63,6 +63,7 @@ istream& operator>>(istream& is, Figure& obj){
 };
 
 Point Figure::calculatGeomCenter() {
+    
     if(_points.size() == 0){
         throw("Фигура не существует.");
     } 
@@ -82,28 +83,43 @@ Point Figure::calculatGeomCenter() {
 
     y /= sizeListPoints;
 
+    x = static_cast<int>(x * EPSILON) / EPSILON;
+
+    y = static_cast<int>(y * EPSILON) / EPSILON;
+
     Point centerPoint(x, y);
 
     return move(centerPoint);
 }
 
 Figure::operator double() {
+
     if(_points.size() == 0){
+
         throw("Фигура не задана.");
     }
+
     double a, b, c, squareFigure, semiperimeterFigure;
     
     Point center = this->calculatGeomCenter();
 
     a = sqrt(pow((_points[0].getX() - _points[1].getX()), 2) + pow((_points[0].getY() - _points[1].getY()), 2));
 
+    a = static_cast<int>(a * EPSILON) / EPSILON;
+
     b = sqrt(pow((_points[0].getX() - center.getX()), 2) + pow((_points[0].getY() - center.getY()), 2));
+    
+    b = static_cast<int>(b * EPSILON) / EPSILON;
 
     c = b;
 
     semiperimeterFigure = (a + b + c) / 2;
 
+    semiperimeterFigure = static_cast<int>(semiperimeterFigure * EPSILON) / EPSILON;
+
     squareFigure = sqrt(semiperimeterFigure * (semiperimeterFigure - a) * (semiperimeterFigure - b) * (semiperimeterFigure - c));
+
+    squareFigure = static_cast<int>(squareFigure * EPSILON) / EPSILON;
 
     return squareFigure;
 }

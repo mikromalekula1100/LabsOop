@@ -1,8 +1,6 @@
-// #include <gtest/gtest.h>
+#include <gtest/gtest.h>
 
-// #include "Octagon.h"
-// #include "Pentagon.h"
-// #include "Hexagon.h"
+#include "Hexagon.h"
 
 
 

@@ -14,6 +14,8 @@ friend istream& operator>>(istream& is, Figure& obj);
 protected:
     vector<Point> _points;
 
+    const double EPSILON = 10000.0; 
+    
 public:
     virtual ~Figure();
 
