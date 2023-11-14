@@ -2,6 +2,7 @@
 
 #include "Point.h"
 #include <vector>
+#include <math.h>
 
 using namespace std;
 
@@ -16,9 +17,23 @@ protected:
 public:
     virtual ~Figure();
 
-    // virtual Point calculatGeomCenter();
+    Figure();
 
-    // virtual operator double() = 0;
+    Figure(const vector<Point>& points);
+
+    Figure(const Figure& other);
+
+    Figure(Figure&&);
+
+    virtual Figure& operator=(const Figure&);
+
+    virtual Figure& operator=(Figure&&);
+
+    virtual bool operator==(const Figure&);
+
+    virtual Point calculatGeomCenter();
+
+    virtual explicit operator double();
 
 };
 

@@ -59,7 +59,6 @@ void Point::setY(double y){
     _y = y;
 }
 
-
 istream& operator>>(istream& is, Point& obj){
     cout<<"Введи координаты точки через пробел, начиная с X"<<endl;
     is>>obj._x>>obj._y;
@@ -69,6 +68,10 @@ istream& operator>>(istream& is, Point& obj){
 ostream& operator<<(ostream& out, const Point& obj){
     out<<"x = "<<obj._x<<", y = "<<obj._y<<".";
     return out;
+}
+
+bool operator!=(const Point& a, const Point& b) { 
+    return (a._x != b._x || a._y != b._y);    
 }
 
 bool operator==(const Point& a, const Point& b){

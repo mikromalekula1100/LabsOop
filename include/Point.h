@@ -9,6 +9,7 @@ class Point{
 friend bool operator==(const Point& a, const Point& b);
 friend istream& operator>>(istream& is, Point& obj);
 friend ostream& operator<<(ostream& out, const Point& obj);
+friend bool operator!=(const Point& a, const Point& b);
 
 protected:
     double _x;
