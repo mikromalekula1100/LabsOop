@@ -5,32 +5,26 @@
 class Octagon : public Figure{
 
 public:
-    vector<pair<double, double>> _points;
 
-public:
-    static const int _numberVertices = 8;
+    Octagon(const vector<Point>& points);
 
-    Octagon();
+    // Octagon(const Octagon&);
 
-    Octagon(const initializer_list<pair<double, double>>& lst);
+    // Octagon(Octagon&&);
 
-    Octagon(const Octagon&);
+    // Octagon& operator=(const Octagon&);
 
-    Octagon(Octagon&&);
+    // Octagon& operator=(Octagon&&);
 
-    Octagon& operator=(const Octagon&);
+    // bool operator==(const Octagon&);
 
-    Octagon& operator=(Octagon&&);
+    // const vector<pair<double, double>>& getPoints() const;
 
-    bool operator==(const Octagon&);
+    // pair<double, double> calculatGeomCenter () override;
 
-    const vector<pair<double, double>>& getPoints() const;
+    // explicit operator double() override;
 
-    pair<double, double> calculatGeomCenter () override;
+    // ostream& print(ostream&) const override;
 
-    explicit operator double() override;
-
-    ostream& print(ostream&) const override;
-
-    istream& reading(istream&) override;
+    // istream& reading(istream&) override;
 };

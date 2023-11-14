@@ -1,26 +1,24 @@
 #pragma once
 
-#include <iostream>
+#include "Point.h"
 #include <vector>
-#include <cmath>
 
 using namespace std;
 
 class Figure{
 
+friend ostream& operator<<(ostream& out, const Figure& obj);
+friend istream& operator>>(istream& is, Figure& obj);
+
+protected:
+    vector<Point> _points;
+
 public:
     virtual ~Figure();
 
-    virtual pair<double, double> calculatGeomCenter() = 0;
+    // virtual Point calculatGeomCenter();
 
-    virtual operator double() = 0;
+    // virtual operator double() = 0;
 
-    virtual ostream& print(ostream&) const = 0;
-
-    virtual istream& reading(istream&)  = 0;
-    
 };
 
-ostream& operator<<(ostream& out, const Figure& obj);
-
-istream& operator>>(istream& is, Figure& obj);
