@@ -3,90 +3,85 @@
 #include "Hexagon.h"
 
 
+class HexagonOperatorEqually : public ::testing::TestWithParam< vector<Point> > {};
 
-// class HexagonOperatorEqually : public ::testing::TestWithParam< std::initializer_list<pair<double, double>> > {};
+TEST_P(HexagonOperatorEqually, OperatorEqually) {
 
-// TEST_P(HexagonOperatorEqually, OperatorEqually) {
-
-//   auto param = GetParam();
+  auto param = GetParam();
   
-//   Hexagon p(param);
+  Hexagon p1({{1, 0}, {0.5, 0.866025},
+     {-0.5, 0.866025}, {-1, 0.0000000358979}, {-0.5, -0.866025}, { 0.5, -0.866025}});
 
-//   // arrange 
-//   Hexagon p1(param);
+
+  // arrange 
+  Hexagon p(param);
+  // act
+  bool result = (p == p1);
+
+  // assert
   
-//   // act
-//   bool result = (p == p1);
+  ASSERT_EQ(result, true);
+}
 
-//   // assert
-  
-//   ASSERT_EQ(result, true);
-// }
-
-// INSTANTIATE_TEST_SUITE_P(
-// 	StringsWithoutIncorrect,
-// 	HexagonOperatorEqually,
-// 	::testing::Values(
-// 		     std::initializer_list<pair<double, double>>{{1, 0}, { 0.707107, 0.707107}, { 0.0000000017949, 1 },
-//      {-0.707107, 0.707107}, {-1, 0.00000000358979}, { -0.707107, -0.707107 }, {-0.00000000538469, -1 },
-//       {0.707107, -0.707107}}
+INSTANTIATE_TEST_SUITE_P(
+	StringsWithoutIncorrect,
+	HexagonOperatorEqually,
+	::testing::Values(
+		    vector<Point>{{1, 0}, {0.5, 0.866025},
+     {-0.5, 0.866025}, {-1, 0.0000000358979}, {-0.5, -0.866025}, { 0.5, -0.866025}}
         
-// ));
+));
 
+class HexagonCenterFigure : public ::testing::TestWithParam< std::pair<vector<Point>, Point> > {};
 
-// class HexagonCenterFigure : public ::testing::TestWithParam< std::pair<const std::initializer_list<pair<double, double>>, std::pair<double, double>> > {};
+TEST_P(HexagonCenterFigure, CenterFigure) {
 
-// TEST_P(HexagonCenterFigure, CenterFigure) {
+  auto params = GetParam();
 
-//   auto params = GetParam();
+  Hexagon p(params.first);
 
-//   Hexagon p(params.first);
-
-//   // arrange 
-//   pair<double, double> correctResult = params.second;
+  // arrange 
+  Point correctResult = params.second;
   
-//   // act
-//   pair<double, double> result;
+  // act
+  Point result = p.calculatGeomCenter();
 
-//   // assert
-//   ASSERT_EQ(result, correctResult);
-// }
+  // assert
+  ASSERT_EQ(result, correctResult);
+}
 
-// INSTANTIATE_TEST_SUITE_P(
-// 	StringsWithoutIncorrect,
-// 	HexagonCenterFigure,
-// 	::testing::Values(
-// 		    std::pair<const std::initializer_list<pair<double, double>>, std::pair<double, double>>{{{1, 0}, { 0.707107, 0.707107}, { 0.0000000017949, 1 },
-//      {-0.707107, 0.707107}, {-1, 0.00000000358979}, { -0.707107, -0.707107 }, {-0.00000000538469, -1 },
-//       {0.707107, -0.707107}}, {0, 0}}
+INSTANTIATE_TEST_SUITE_P(
+	StringsWithoutIncorrect,
+	HexagonCenterFigure,
+	::testing::Values(
+		    std::pair<vector<Point>, Point>{{{1, 0}, {0.5, 0.866025},
+     {-0.5, 0.866025}, {-1, 0.0000000358979}, {-0.5, -0.866025}, { 0.5, -0.866025}}, {0, 0}}
         
-// ));
+));
 
 
-// class HexagonSquareFigure : public ::testing::TestWithParam< std::pair<const std::initializer_list<pair<double, double>>, double> > {};
+class HexagonSquareFigure : public ::testing::TestWithParam< std::pair<vector<Point>, double> > {};
 
-// TEST_P(HexagonSquareFigure, SquareFigure) {
+TEST_P(HexagonSquareFigure, SquareFigure) {
 
-//   auto params = GetParam();
-
-//   Hexagon p(params.first);
-
-//   // arrange 
-//   double correctResult = params.second;
+  auto params = GetParam();
   
-//   // act
-//   double result = static_cast<double>(p);
+  double correctResult = params.second;
+  // arrange 
+  Hexagon p(params.first);
+  
+  // act
+  double result = static_cast<double>(p);
 
-//   // assert
-//   ASSERT_EQ(result, correctResult);
-// }
+  // assert
+  ASSERT_EQ(result, correctResult);
+}
 
-// INSTANTIATE_TEST_SUITE_P(
-// 	StringsWithoutIncorrect,
-// 	HexagonSquareFigure,
-// 	::testing::Values(
-// 		    std::pair<const std::initializer_list<pair<double, double>>, double>{{{1, 0}, { 0.707107, 0.707107}, { 0.0000000017949, 1 },
-//      {-0.707107, 0.707107}, {-1, 0.00000000358979}, { -0.707107, -0.707107 }, {-0.00000000538469, -1 },
-//       {0.707107, -0.707107}}, 0}
+INSTANTIATE_TEST_SUITE_P(
+	StringsWithoutIncorrect,
+	HexagonSquareFigure,
+	::testing::Values(
+		    std::pair<vector<Point>, double>{{{1, 0}, {0.5, 0.866025},
+     {-0.5, 0.866025}, {-1, 0.0000000358979}, {-0.5, -0.866025}, { 0.5, -0.866025}}, 0.433011}
         
-// ));
+));

@@ -39,12 +39,12 @@ Point& Point::operator=(Point&& other){
     return *this;
 }   
 
-double Point::getX(){
+double Point::getX() const{
 
     return _x;
 }
 
-double Point::getY(){
+double Point::getY() const{
 
     return _y;
 }

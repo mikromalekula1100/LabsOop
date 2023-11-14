@@ -32,9 +32,9 @@ public:
 
     Point& operator=(Point&& other);
 
-    double getX();
+    double getX() const;
 
-    double getY();
+    double getY() const;
 
     void setX(double x);
 

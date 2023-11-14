@@ -6,12 +6,16 @@ using namespace std;
 
 int main() {
  
-    Pentagon p({{1, 2}, {2, 3}, {4,5}, {3,5}, {54,2}});
-    Octagon o({{1, 2}, {2, 3}, {4,5}, {3,5}, {54,2}, {2, 3}, {4,5}, {3,5}, {54,2}});
-    Hexagon h({{1, 2}, {2, 3}, {4,5}, {3,5}, {54,2}, {2, 3}, {4,5}});
+    
+    Octagon o({{1, 0}, {0.5, 0.866025},
+     {-0.5, 0.866025}, {-1, 0.0000000358979}, {-0.5, -0.866025}, { 0.5, -0.866025}});
+    
 
-    cout<<p.calculatGeomCenter()<<endl;
+    cout<<static_cast<double>(o)<<endl;
     cout<<o.calculatGeomCenter()<<endl;
-    cout<<h.calculatGeomCenter()<<endl;
+     
+    
+
+
 
 }

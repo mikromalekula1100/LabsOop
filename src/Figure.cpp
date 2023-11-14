@@ -33,10 +33,16 @@ bool Figure::operator==(const Figure& other) {
 }
 
 Figure::Figure(const vector<Point>& points) {
-    
-    for(Point i : points){
+    double x,y;
+    for(const Point& i : points){
+
+        x = i.getX();
+        y = i.getY();
+
+        x = static_cast<int>(x * EPSILON) / EPSILON;
+        y = static_cast<int>(y * EPSILON) / EPSILON;
         
-        _points.push_back(i);
+        _points.push_back({x, y});
     }
 
 }
