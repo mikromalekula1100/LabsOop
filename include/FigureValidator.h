@@ -2,10 +2,15 @@
 
 #include "Point.h"
 #include <vector>
+#include <math.h>
 
 
 class FigureValidator{
 
 public:
-    virtual bool validate(const vector<Point>&) = 0;
+    
+    const double EPSILON = 1000000.0; 
+    const double INACCURACY = 10e-5; 
+
+    virtual bool validate(vector<Point>&) = 0;
 };

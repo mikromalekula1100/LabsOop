@@ -5,7 +5,7 @@ Figure::~Figure() {}
 Figure::Figure() = default;
 
 Figure::Figure(Figure&& other) { 
-    cout<<typeid(other).name()<<endl;
+    
     _points = move(other._points);
 }
 
@@ -33,16 +33,10 @@ bool Figure::operator==(const Figure& other) {
 }
 
 Figure::Figure(const vector<Point>& points) {
-    double x,y;
-    for(const Point& i : points){
-
-        x = i.getX();
-        y = i.getY();
-
-        x = static_cast<int>(x * EPSILON) / EPSILON;
-        y = static_cast<int>(y * EPSILON) / EPSILON;
+   
+    for(Point i : points){
         
-        _points.push_back({x, y});
+        _points.push_back(i);
     }
 
 }

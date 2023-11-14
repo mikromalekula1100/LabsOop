@@ -1,9 +1,7 @@
-#include "PentagonValidator.h"
+#include "HexagonValidator.h"
 
-
-bool PentagonValidator::validate(vector<Point>& list) {
-
-    if(list.size() != PentagonValidator::numberVertices){
+bool HexagonValidator::validate(vector<Point>& list) { 
+    if(list.size() != HexagonValidator::numberVertices){
 
         throw std::invalid_argument("Введено не то кол-во аргументов для данного типа");
     }

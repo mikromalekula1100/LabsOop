@@ -6,5 +6,7 @@ class Octagon : public Figure{
 
 public:
 
+    static Octagon create(vector<Point>&);
+    
     using Figure::Figure;
 };

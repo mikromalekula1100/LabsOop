@@ -3,11 +3,11 @@
 #include "FigureValidator.h"
 
 
-class PentagonValidator : public FigureValidator{
+class HexagonValidator : public FigureValidator{
 
 public:
 
-    static const int numberVertices = 5;
+    static const int numberVertices = 6;
 
     bool validate(vector<Point>&) override;
 };
