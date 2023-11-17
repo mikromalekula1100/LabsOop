@@ -1,13 +1,27 @@
 #pragma once
 
-#include "Figure.h"
+#include "/home/maks/Desktop/LabsOop/include/Figure.h"
+#include "/home/maks/Desktop/LabsOop/include/HexagonValidator.h"
 
-class Hexagon : public Figure{
+template <Number T, Number D>
+class Hexagon : public Figure<T, D>{
 
 public:
     
-    static Hexagon create(vector<Point>&);
+    static Hexagon create(vector<Point<T, D>>&);
     
-    using Figure::Figure;
+    using Figure<T, D>::Figure;
 };
 
+Hexagon()->Hexagon<double, double>;
+// ----------------------------------------------------------------------------------------------------------
+// ------------------implementation--------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------------------
+
+template <Number T, Number D>
+Hexagon<T, D> Hexagon<T, D>::create(vector<Point<T, D>>& list) { 
+    HexagonValidator<T, D> validator;
+    validator.validate(list);
+
+    return move(Hexagon<T, D>(list));
+}

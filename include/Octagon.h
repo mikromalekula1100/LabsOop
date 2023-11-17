@@ -1,12 +1,28 @@
 #pragma once
 
-#include "Figure.h"
+#include "/home/maks/Desktop/LabsOop/include/Figure.h"
+#include "/home/maks/Desktop/LabsOop/include/OctagonValidator.h"
 
-class Octagon : public Figure{
+template <Number T, Number D>
+class Octagon : public Figure<T, D>{
 
 public:
 
-    static Octagon create(vector<Point>&);
+    using Figure<T, D>::Figure;
     
-    using Figure::Figure;
+    static Octagon create(vector<Point<T, D>>&);
 };
+
+Octagon()->Octagon<double, double>;
+
+// ----------------------------------------------------------------------------------------------------------
+// ------------------implementation--------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------------------
+
+template <Number T, Number D>
+Octagon<T, D> Octagon<T, D>::create(vector<Point<T, D>>& list) { 
+    OctagonValidator<T, D> validator;
+    validator.validate(list);
+
+    return move(Octagon<T, D>(list));
+}

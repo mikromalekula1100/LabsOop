@@ -10,10 +10,10 @@ template <Number T, Number D>
 class Figure{
 
 template <Number U, Number U1>
-friend ostream& operator<<(ostream& out, const Figure<T, D>& obj);
+friend ostream& operator<<(ostream& out, const Figure<U, U1>& obj);
 
 template <Number U, Number U1>
-friend istream& operator>>(istream& is, Figure<T, D>& obj);
+friend istream& operator>>(istream& is, Figure<U, U1>& obj);
 
 protected:
     vector<Point<T, D>> _points;
@@ -42,6 +42,7 @@ public:
     virtual explicit operator double();
 
 };
+
 
 
 // ----------------------------------------------------------------------------------------------------------
@@ -103,6 +104,7 @@ Figure<T, D>::Figure(const Figure<T, D>& other) {
 }
 
 template <Number T, Number D>
+
 ostream& operator<<(ostream& out, const Figure<T, D>& obj){
     out<<"Фигура "<<typeid(obj).name()<<" : "<<endl;
     for(const Point<T, D>& i : obj._points){

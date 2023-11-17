@@ -1,13 +1,26 @@
 #pragma once
 
-#include "Figure.h"
+#include "/home/maks/Desktop/LabsOop/include/Figure.h"
+#include "/home/maks/Desktop/LabsOop/include/PentagonValidator.h"
 
-class Pentagon : public Figure{
+template <Number T, Number D>
+class Pentagon : public Figure<T, D>{
 
 public:
 
-    using Figure::Figure;
+    using Figure<T, D>::Figure;
 
-    static Pentagon create(vector<Point>&);
+    static Pentagon create(vector<Point<T, D>>&);
 };
+Pentagon()->Pentagon<double, double>;
+// ----------------------------------------------------------------------------------------------------------
+// ------------------implementation--------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------------------
 
+template <Number T, Number D>
+Pentagon<T, D> Pentagon<T, D>::create(vector<Point<T, D>>& list) { 
+    PentagonValidator<T, D> validator;
+    validator.validate(list);
+
+    return move(Pentagon<T, D>(list));
+}
