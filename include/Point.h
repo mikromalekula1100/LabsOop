@@ -2,9 +2,6 @@
 
 #include <iostream>
 #include <concepts>
-
-
-
 #include <typeinfo>
 
 using namespace std;

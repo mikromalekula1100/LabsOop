@@ -1,7 +1,7 @@
 #pragma once
 
-#include "/home/maks/Desktop/LabsOop/include/Figure.h"
-#include "/home/maks/Desktop/LabsOop/include/PentagonValidator.h"
+#include "Figure.h"
+#include "PentagonValidator.h"
 
 template <Number T, Number D>
 class Pentagon : public Figure<T, D>{

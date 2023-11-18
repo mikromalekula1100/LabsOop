@@ -1,94 +1,94 @@
-// #include <gtest/gtest.h>
+#include <gtest/gtest.h>
 
-// #include "Pentagon.h"
+#include "Pentagon.h"
 
 
-// class PentagonOperatorEqually : public ::testing::TestWithParam< vector<Point> > {};
+class PentagonOperatorEqually : public ::testing::TestWithParam< vector<Point<double, double>> > {};
 
-// TEST_P(PentagonOperatorEqually, OperatorEqually) {
+TEST_P(PentagonOperatorEqually, OperatorEqually) {
 
-//   auto param = GetParam();
+  auto param = GetParam();
   
-//   Pentagon p1({{1, 0}, {0.309017, 0.951057},
-//           {-0.809017, 0.587785}, {-0.809017, -0.587785},
-//            {0.309017, -0.951057}});
+  Pentagon<double, double> p1({{1, 0}, {0.309017, 0.951057},
+          {-0.809017, 0.587785}, {-0.809017, -0.587785},
+           {0.309017, -0.951057}});
 
 
-//   // arrange 
-//   Pentagon p(param);
-//   // act
-//   bool result = (p == p1);
+  // arrange 
+  Pentagon<double, double> p(param);
+  // act
+  bool result = (p == p1);
 
-//   // assert
+  // assert
   
-//   ASSERT_EQ(result, true);
-// }
+  ASSERT_EQ(result, true);
+}
 
-// INSTANTIATE_TEST_SUITE_P(
-// 	StringsWithoutIncorrect,
-// 	PentagonOperatorEqually,
-// 	::testing::Values(
-// 		    vector<Point>{
-//           {1, 0}, {0.309017, 0.951057},
-//           {-0.809017, 0.587785}, {-0.809017, -0.587785},
-//            {0.309017, -0.951057}}
+INSTANTIATE_TEST_SUITE_P(
+	StringsWithoutIncorrect,
+	PentagonOperatorEqually,
+	::testing::Values(
+		    vector<Point<double, double>>{
+          {1, 0}, {0.309017, 0.951057},
+          {-0.809017, 0.587785}, {-0.809017, -0.587785},
+           {0.309017, -0.951057}}
         
-// ));
+));
 
-// class PentagonCenterFigure : public ::testing::TestWithParam< std::pair<vector<Point>, Point> > {};
+class PentagonCenterFigure : public ::testing::TestWithParam< std::pair<vector<Point<double, double>>, Point<double, double>> > {};
 
-// TEST_P(PentagonCenterFigure, CenterFigure) {
+TEST_P(PentagonCenterFigure, CenterFigure) {
 
-//   auto params = GetParam();
+  auto params = GetParam();
 
-//   Pentagon p(params.first);
+  Pentagon<double, double> p(params.first);
 
-//   // arrange 
-//   Point correctResult = params.second;
+  // arrange 
+  Point<double, double> correctResult = params.second;
   
-//   // act
-//   Point result = p.calculatGeomCenter();
+  // act
+  Point<double, double> result = p.calculatGeomCenter();
 
-//   // assert
-//   ASSERT_EQ(result, correctResult);
-// }
+  // assert
+  ASSERT_EQ(result, correctResult);
+}
 
-// INSTANTIATE_TEST_SUITE_P(
-// 	StringsWithoutIncorrect,
-// 	PentagonCenterFigure,
-// 	::testing::Values(
-// 		    std::pair<vector<Point>, Point>{{
-//           {1, 0}, {0.309017, 0.951057},
-//           {-0.809017, 0.587785}, {-0.809017, -0.587785},
-//            {0.309017, -0.951057}}, {0, 0}}
+INSTANTIATE_TEST_SUITE_P(
+	StringsWithoutIncorrect,
+	PentagonCenterFigure,
+	::testing::Values(
+		    std::pair<vector<Point<double, double>>, Point<double, double>>{{
+          {1, 0}, {0.309017, 0.951057},
+          {-0.809017, 0.587785}, {-0.809017, -0.587785},
+           {0.309017, -0.951057}}, {0, 0}}
         
-// ));
+));
 
 
-// class PentagonSquareFigure : public ::testing::TestWithParam< std::pair<vector<Point>, double> > {};
+class PentagonSquareFigure : public ::testing::TestWithParam< std::pair<vector<Point<double, double>>, double> > {};
 
-// TEST_P(PentagonSquareFigure, SquareFigure) {
+TEST_P(PentagonSquareFigure, SquareFigure) {
 
-//   auto params = GetParam();
+  auto params = GetParam();
   
-//   double correctResult = params.second;
-//   // arrange 
-//   Pentagon p(params.first);
+  double correctResult = params.second;
+  // arrange 
+  Pentagon<double, double> p(params.first);
   
-//   // act
-//   double result = static_cast<double>(p);
+  // act
+  double result = static_cast<double>(p);
 
-//   // assert
-//   ASSERT_EQ(result, correctResult);
-// }
+  // assert
+  ASSERT_EQ(result, correctResult);
+}
 
-// INSTANTIATE_TEST_SUITE_P(
-// 	StringsWithoutIncorrect,
-// 	PentagonSquareFigure,
-// 	::testing::Values(
-// 		    std::pair<vector<Point>, double>{{
-//             {1, 0}, {0.309017, 0.951057},
-//             {-0.809017, 0.587785}, {-0.809017, -0.587785},
-//             {0.309017, -0.951057}}, 0.475528}
+INSTANTIATE_TEST_SUITE_P(
+	StringsWithoutIncorrect,
+	PentagonSquareFigure,
+	::testing::Values(
+		    std::pair<vector<Point<double, double>>, double>{{
+            {1, 0}, {0.309017, 0.951057},
+            {-0.809017, 0.587785}, {-0.809017, -0.587785},
+            {0.309017, -0.951057}}, 0.475528}
         
-// ));
+));

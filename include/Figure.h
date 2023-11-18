@@ -1,6 +1,6 @@
 #pragma once
 
-#include "/home/maks/Desktop/LabsOop/include/Point.h"
+#include "Point.h"
 #include <vector>
 #include <math.h>
 

@@ -1,7 +1,7 @@
 #pragma once
 
-#include "/home/maks/Desktop/LabsOop/include/Figure.h"
-#include "/home/maks/Desktop/LabsOop/include/OctagonValidator.h"
+#include "Figure.h"
+#include "OctagonValidator.h"
 
 template <Number T, Number D>
 class Octagon : public Figure<T, D>{

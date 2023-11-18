@@ -1,6 +1,6 @@
 #pragma once
 
-#include "/home/maks/Desktop/LabsOop/include/FigureValidator.h"
+#include "FigureValidator.h"
 
 template <Number T, Number D>
 class PentagonValidator : public FigureValidator<T, D>{

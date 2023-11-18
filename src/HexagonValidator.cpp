@@ -1,38 +1,20 @@
-#pragma once
+#include "HexagonValidator.h"
 
-#include "FigureValidator.h"
-
-template <Number T, Number D>
-class OctagonValidator : public FigureValidator<T, D>{
-
-public:
-
-    static const int numberVertices = 8;
-
-    bool validate(vector<Point<T, D>>&) override;
-};
-
-
-// ----------------------------------------------------------------------------------------------------------
-// ------------------implementation--------------------------------------------------------------------------
-// ----------------------------------------------------------------------------------------------------------
-
-template <Number T, Number D>
-bool OctagonValidator<T, D>::validate(vector<Point<T, D>>& list) {
-    if(list.size() != OctagonValidator<T, D>::numberVertices){
+bool HexagonValidator::validate(vector<Point>& list) { 
+    if(list.size() != HexagonValidator::numberVertices){
 
         throw std::invalid_argument("Введено не то кол-во аргументов для данного типа");
     }
 
     double x,y;
 
-    for(Point<T, D>& i : list){
+    for(Point& i : list){
 
         x = i.getX();
         y = i.getY();
 
-        x = static_cast<int>(x * this->EPSILON) / this->EPSILON;
-        y = static_cast<int>(y * this->EPSILON) / this->EPSILON;
+        x = static_cast<int>(x * EPSILON) / EPSILON;
+        y = static_cast<int>(y * EPSILON) / EPSILON;
 
         i.setX(x);
         i.setY(y);
@@ -59,7 +41,7 @@ bool OctagonValidator<T, D>::validate(vector<Point<T, D>>& list) {
 
         secondLength = sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2));
         
-        if(abs(secondLength -  firstLength) > this->INACCURACY){
+        if(abs(secondLength -  firstLength) > INACCURACY){
             cout<<secondLength - firstLength<<endl;
             throw std::invalid_argument("Фигура не равносторонняя!");
         }
