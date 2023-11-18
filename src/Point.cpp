@@ -7,14 +7,9 @@ Point::Point(double x, double y) : _x(x), _y(y) {}
 Point::Point(const Point& other) : _x(other._x), _y(other._y) {}
 
 Point::Point(Point&& other) : _x(other._x), _y(other._y){
+    
     other._x = 0;
     other._y = 0;
-}
-
-Point::Point(initializer_list<double>& list){
-    
-    if(list.size() != 2) throw("Неверные координаты точки");
-    
 }
 
 double Point::operator[](int x) const{

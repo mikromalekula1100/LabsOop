@@ -24,8 +24,6 @@ public:
 
     Point(Point&& other);
 
-    Point(initializer_list<double>& list);
-
     double operator[](int x) const;
 
     Point& operator=(const Point& other);
