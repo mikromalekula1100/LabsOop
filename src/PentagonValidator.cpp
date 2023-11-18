@@ -44,7 +44,9 @@ bool PentagonValidator::validate(vector<Point>& list) {
         secondLength = sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2));
         
         if(abs(secondLength -  firstLength) > INACCURACY){
+
             cout<<secondLength - firstLength<<endl;
+            
             throw std::invalid_argument("Фигура не равносторонняя!");
         }
 

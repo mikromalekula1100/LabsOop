@@ -1,6 +1,7 @@
 #include "HexagonValidator.h"
 
 bool HexagonValidator::validate(vector<Point>& list) { 
+
     if(list.size() != HexagonValidator::numberVertices){
 
         throw std::invalid_argument("Введено не то кол-во аргументов для данного типа");
@@ -42,7 +43,9 @@ bool HexagonValidator::validate(vector<Point>& list) {
         secondLength = sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2));
         
         if(abs(secondLength -  firstLength) > INACCURACY){
+
             cout<<secondLength - firstLength<<endl;
+            
             throw std::invalid_argument("Фигура не равносторонняя!");
         }
 

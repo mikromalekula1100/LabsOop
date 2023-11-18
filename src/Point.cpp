@@ -12,6 +12,7 @@ Point::Point(Point&& other) : _x(other._x), _y(other._y){
 }
 
 Point::Point(initializer_list<double>& list){
+    
     if(list.size() != 2) throw("Неверные координаты точки");
     
 }
