@@ -159,9 +159,8 @@ set_t fight(const set_t &array, size_t distance)
         for (const auto &defender : array)
             if ((attacker != defender) && (attacker->is_close(defender, distance)))
             {   
-                VisitorFight fight;
                 bool success{false};
-                success = attacker->accept(fight, attacker);
+                success = defender->accept(attacker);
 
                 if (success)
                     dead_list.insert(defender);
